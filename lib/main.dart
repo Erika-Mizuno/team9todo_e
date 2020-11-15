@@ -1,14 +1,11 @@
-
-
-
 /*
- チェックボックス
-
 import 'package:flutter/material.dart';
+ */
 
-void main() => runApp(
-  MaterialApp(home: MyApp()),
-);
+void main() {
+  runApp(MyApp());
+}
+
 class MyApp extends StatelessWidget {
   final List<Choice> choices = [
     Choice('月', ['現代文', '古典', 'コミュ英', '英語表現', '数学Ⅰ']),
@@ -23,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+        primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: DefaultTabController(
@@ -84,14 +81,26 @@ class Choice {
   final List<String> classes;
 }
 
-class My2App extends StatefulWidget {
+*/
+/*
+
+import 'package:flutter/material.dart';
+
+
+
+
+void main() => runApp(
+  MaterialApp(home: MyApp()),
+);
+
+class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _State();
   }
 }
 
-class _State extends State<My2App> {
+class _State extends State<MyApp> {
   var _checkBox1 = false;
   var _checkBox2 = false;
   var _checkBox3 = false;
@@ -184,154 +193,7 @@ class _State extends State<My2App> {
   }
 }
 
+ */
 
-チェックボックス
+
 */
-
-/*
-時間割・to do
-
-import 'package:flutter/material.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  final List<Choice> choices = [
-    Choice('月', ['現代文', '古典', 'コミュ英', '英語表現', '数学Ⅰ']),
-    Choice('火', ['コミュ英', '数学A', '倫理', '化学', '化学']),
-    Choice('水', ['生物', '現代文', '体育', '英語表現', '休講']),
-    Choice('木', ['数学Ⅰ', '数学Ⅰ', '美術', '美術', '現代文']),
-    Choice('金', ['数学A', '体育', '生物', '古典', '政治経済']),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: DefaultTabController(
-        length: choices.length,
-        child: Scaffold(
-          appBar: PreferredSize(
-            preferredSize: Size.fromHeight(80.0),
-            child: AppBar(
-              title: const Text('時間割・to do'),
-              bottom: TabBar(
-                isScrollable: false,
-                tabs: choices.map(
-                      (Choice choice) {
-                    return Tab(
-                      text: choice.day,
-                    );
-                  },
-                ).toList(),
-              ),
-            ),
-          ),
-          body: TabBarView(
-            children: choices.map((Choice choice) {
-              return Container(
-                child: ListView.builder(
-                  itemBuilder: (BuildContext context, int index) {
-                    return Card(
-                        margin: const EdgeInsets.all(0.5),
-                        child: Container(
-                          margin: const EdgeInsets.all(0.5),
-                          width: 300,
-                          height: 50,
-                          child: ListTile(
-                            title: Text(
-                                '${index + 1}限 : ' + choice.classes[index]
-                            ),
-                          ),
-                        ),
-                    );
-                  },
-                  itemCount: 5,
-                ),
-              );
-            }).toList(),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-
-
-class Choice {
-  Choice(this.day, this.classes);
-
-  final String day;
-  final List<String> classes;
-}
-
-
-時間割・to do*/
-
-import 'package:flutter/material.dart';
-
-void main() => runApp(
-  MaterialApp(home: MyApp()),
-);
-class MyApp extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    final List<Choice> choices = [
-      Choice('月', ['現代文', '古典', 'コミュ英', '英語表現', '数学Ⅰ']),
-      Choice('火', ['コミュ英', '数学A', '倫理', '化学', '化学']),
-      Choice('水', ['生物', '現代文', '体育', '英語表現', '休講']),
-      Choice('木', ['数学Ⅰ', '数学Ⅰ', '美術', '美術', '現代文']),
-      Choice('金', ['数学A', '体育', '生物', '古典', '政治経済']),
-    ];
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Container(
-              decoration: BoxDecoration(color: Colors.blueGrey,
-                  border: Border.all(color: Colors.red)),
-              width: size.width,
-              height: resultAreaHeight,
-              child: Text('Resultエリア', style: TextStyle(fontSize: 40),),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.black, border: Border.all(color: Colors.blue)),
-              width: size.width,
-              height: tenkeyAreaHeight,
-              child: Text('テンキーエリア', style: TextStyle(fontSize: 40),),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  class Choice {
-
-    Choice(this.day, this.classes);
-
-  final String day;
-  final List<String> classes;
-  }
-
-}
-
-
-
-
-
-
-
